@@ -63,7 +63,7 @@ async function loadProducts(){
 
         const res =
         await fetch(
-            "http://localhost:5000/api/products"
+            "https://haryana-supplements-api.onrender.com/api/products"
         );
 
         products =
@@ -217,7 +217,7 @@ async function editProduct(index){
 
         const res = await fetch(
 
-            `http://localhost:5000/api/products/${product._id}`,
+            `https://haryana-supplements-api.onrender.com/api/products/${product._id}`,
 
             {
 
@@ -409,7 +409,7 @@ console.log(newProduct);
     const response =
     await fetch(
 
-        "http://localhost:5000/api/products/add",
+        "https://haryana-supplements-api.onrender.com/api/products/add",
 
         {
 
@@ -505,7 +505,7 @@ async function deleteProduct(index){
 
         await fetch(
 
-            `http://localhost:5000/api/products/${product._id}`,
+            `https://haryana-supplements-api.onrender.com/api/products/${product._id}`,
 
             {
 
@@ -548,7 +548,7 @@ async function displayOrders(){
 
         const res = await fetch(
 
-            "http://localhost:5000/api/orders"
+            "https://haryana-supplements-api.onrender.com/api/orders"
 
         );
 
@@ -558,17 +558,6 @@ async function displayOrders(){
 
         orders.forEach(order => {
 
-            const productList =
-
-            order.products.map(
-
-            product =>
-
-            `${product.name}
-            (x${product.quantity})`
-
-            ).join("<br>");
-            
             ordersTable.innerHTML += `
 
             <tr>
@@ -588,12 +577,6 @@ async function displayOrders(){
                 <td>
 
                     ₹${order.total}
-
-                </td>
-
-                <td>
-
-                    ${productList}
 
                 </td>
                 
@@ -703,7 +686,7 @@ async function updateOrderStatus(
 
         await fetch(
 
-            `http://localhost:5000/api/orders/${orderId}`,
+            `https://haryana-supplements-api.onrender.com/api/orders/${orderId}`,
 
             {
 
@@ -1127,7 +1110,7 @@ async function loadAdmins(){
 
         const res =
         await fetch(
-            "http://localhost:5000/api/admins"
+            "https://haryana-supplements-api.onrender.com/api/admins"
         );
 
         const admins =
@@ -1225,7 +1208,7 @@ createAdminBtn.addEventListener(
         const res =
         await fetch(
 
-            "http://localhost:5000/api/admins/create",
+            "https://haryana-supplements-api.onrender.com/api/admins/create",
 
             {
 
@@ -1276,7 +1259,7 @@ async function deleteAdmin(id){
 
     await fetch(
 
-        `http://localhost:5000/api/admins/${id}`,
+        `https://haryana-supplements-api.onrender.com/api/admins/${id}`,
 
         {
 
@@ -1301,7 +1284,7 @@ async function loadAnalytics(){
 
         const productsRes =
         await fetch(
-            "http://localhost:5000/api/products"
+            "https://haryana-supplements-api.onrender.com/api/products"
         );
 
         const products =
@@ -1314,7 +1297,7 @@ async function loadAnalytics(){
 
         const ordersRes =
         await fetch(
-            "http://localhost:5000/api/orders"
+            "https://haryana-supplements-api.onrender.com/api/orders"
         );
 
         const orders =
@@ -1417,7 +1400,7 @@ async function loadReviews(){
 
     const response =
     await fetch(
-        "http://localhost:5000/api/reviews"
+        "https://haryana-supplements-api.onrender.com/api/reviews"
     );
 
     const reviews =
@@ -1459,34 +1442,3 @@ async function loadReviews(){
     });
 
 }
-
-async function deleteReview(id){
-
-    const confirmDelete =
-
-    confirm(
-        "Delete Review?"
-    );
-
-    if(!confirmDelete){
-
-        return;
-
-    }
-
-    await fetch(
-
-        `http://localhost:5000/api/reviews/${id}`,
-
-        {
-
-            method:"DELETE"
-
-        }
-
-    );
-
-    loadReviews();
-
-}
-loadReviews();

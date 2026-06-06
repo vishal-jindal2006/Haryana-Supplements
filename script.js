@@ -276,7 +276,7 @@ async function loadProducts(){
     try{
 
         const res = await fetch(
-            "http://localhost:5000/api/products"
+            "https://haryana-supplements-api.onrender.com/api/products"
         );
 
         const products = await res.json();
@@ -708,7 +708,7 @@ async function addReview(){
 
         const response = await fetch(
 
-            "http://localhost:5000/api/reviews",
+            "https://haryana-supplements-api.onrender.com/api/reviews",
 
             {
 
@@ -779,7 +779,7 @@ async function loadReviews(){
         const response =
         await fetch(
 
-            "http://localhost:5000/api/reviews"
+            "https://haryana-supplements-api.onrender.com/api/reviews"
 
         );
 

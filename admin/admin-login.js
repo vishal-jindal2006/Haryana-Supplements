@@ -26,7 +26,7 @@ loginBtn.addEventListener(
             const res =
             await fetch(
 
-                "http://localhost:5000/api/auth/login",
+                "https://haryana-supplements-api.onrender.com/api/auth/login",
 
                 {
 

@@ -23,7 +23,7 @@ document.getElementById(
 const response =
 await fetch(
 
-`http://localhost:5000/api/orders/phone/${phone}`
+`https://haryana-supplements-api.onrender.com/api/orders/phone/${phone}`
 
 );
 
