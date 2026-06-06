@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Haryana Supplements</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div class="loader">
+
+<h1>
+
+HARYANA SUPPLEMENTS
+
+</h1>
+
+</div>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="logo">
+
+<img src="../assets/logos/logo.png">
+
+<h2>
+
+HARYANA SUPPLEMENTS
+
+</h2>
+
+</div>
+
+<!-- NAV MENU -->
+
+<ul id="navMenu">
+
+<li>
+
+<a href="#">
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#products">
+
+Products
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#reviews">
+
+Reviews
+
+</a>
+
+</li>
+
+<li>
+
+<a href="orders.html">
+
+My Orders
+
+</a>
+
+</li>
+
+<a href="checkout.html">
+
+Checkout
+
+</a>
+
+</li>
+
+</ul>
+
+<!-- RIGHT -->
+
+<div class="nav-right">
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Supplements...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<!-- CART -->
+
+<div class="cart-icon">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="cartCount">
+
+0
+
+</span>
+
+</div>
+
+<!-- ADMIN LOGIN -->
+
+<a
+
+href="admin/admin-login.html"
+
+class="admin-login-btn">
+
+Admin
+
+</a>
+
+<!-- MOBILE MENU -->
+
+<div id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+
+BUILD YOUR DREAM PHYSIQUE 💪
+
+</h1>
+
+<p>
+
+Premium Supplements For
+Muscle Growth, Strength
+& Recovery
+
+</p>
+
+<a href="#products">
+
+Shop Now
+
+</a>
+
+</div>
+
+</section>
+
+<!-- OFFER BANNER -->
+
+<section class="offer-banner"
+id="offerBannerSection">
+
+<img
+id="offerBannerImage"
+src="">
+
+<div class="offer-overlay">
+
+<h1 id="offerBannerTitle">
+
+Special Offer
+
+</h1>
+
+</div>
+
+</section>
+
+<!-- CATEGORY FILTER -->
+
+<section class="categories">
+
+<button onclick="filterProducts('All')">
+
+All
+
+</button>
+
+<button onclick="filterProducts('Whey Protein')">
+
+Whey Protein
+
+</button>
+
+<button onclick="filterProducts('Creatine')">
+
+Creatine
+
+</button>
+
+<button onclick="filterProducts('Mass Gainer')">
+
+Mass Gainer
+
+</button>
+
+<button onclick="filterProducts('Pre Workout')">
+
+Pre Workout
+
+</button>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products"
+id="products">
+
+<h2>
+
+Featured Supplements
+
+</h2>
+
+<div class="products-container"
+id="dynamicProducts">
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section class="reviews"
+id="reviews">
+
+<h2>
+
+Customer Reviews ⭐
+
+</h2>
+
+<div class="review-form">
+
+    <input
+    type="text"
+    id="reviewName"
+    placeholder="Your Name">
+
+    <select id="reviewRating">
+
+    <option value="5">⭐⭐⭐⭐⭐</option>
+
+    <option value="4">⭐⭐⭐⭐</option>
+
+    <option value="3">⭐⭐⭐</option>
+
+    <option value="2">⭐⭐</option>
+
+    <option value="1">⭐</option>
+
+    </select>
+
+    <textarea
+    id="reviewText"
+    placeholder="Write Your Review"></textarea>
+
+    <button onclick="addReview()">
+
+        Submit Review
+
+    </button>
+
+</div>
+
+<div id="reviewsContainer"></div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<h2>
+
+HARYANA SUPPLEMENTS
+
+</h2>
+
+<p>
+
+Fuel Your Fitness Journey 💪
+
+</p>
+
+<div class="social-links">
+
+<a href="#">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fa-brands fa-facebook"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fa-brands fa-youtube"></i>
+
+</a>
+
+</div>
+
+</footer>
+
+<div class="developer-credit">
+
+    Developed By ❤️ Vishal Jindal
+
+</div>
+
+<!-- CART SIDEBAR -->
+
+<div class="cart-sidebar"
+id="cartSidebar">
+
+<div class="cart-header">
+
+<h2>
+
+Your Cart
+
+</h2>
+
+<i class="fa-solid fa-xmark"
+id="closeCart"></i>
+
+</div>
+
+<div class="cart-items"
+id="cartItems">
+
+</div>
+
+<div class="cart-footer">
+
+<h3>
+
+Total:
+₹<span id="cartTotal">
+
+0
+
+</span>
+
+</h3>
+
+<button class="checkout-btn">
+
+Checkout
+
+</button>
+
+</div>
+
+</div>
+
+<!-- WHATSAPP BUTTON -->
+
+<a
+
+href="https://wa.me/917027768213"
+
+class="whatsapp-btn"
+
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>

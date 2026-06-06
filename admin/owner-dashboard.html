@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Owner Dashboard</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="dashboard-sidebar">
+
+<h2>OWNER PANEL</h2>
+
+<ul>
+
+<li onclick="scrollToSection('dashboardSection')">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</li>
+
+<li onclick="scrollToSection('bannerSection')">
+
+<i class="fa-solid fa-image"></i>
+
+Offers
+
+</li>
+
+<li onclick="scrollToSection('productSection')">
+
+<i class="fa-solid fa-box"></i>
+
+Products
+
+</li>
+
+<li onclick="scrollToSection('ordersSection')">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Orders
+
+</li>
+
+<li onclick="scrollToSection('adminsSection')">
+
+<i class="fa-solid fa-users"></i>
+
+Admins
+
+</li>
+
+<li onclick="logoutAdmin()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<h1>
+
+Owner Dashboard 👑
+
+</h1>
+
+<div class="admin-info">
+
+Welcome Vishal
+
+</div>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div class="dashboard-cards"
+id="dashboardSection">
+
+<!-- PRODUCTS -->
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-box"></i>
+
+<h2 id="totalProducts">
+
+0
+
+</h2>
+
+<p>Total Products</p>
+
+</div>
+
+<!-- ORDERS -->
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<h2 id="totalOrders">
+
+0
+
+</h2>
+
+<p>Total Orders</p>
+
+</div>
+
+<!-- ADMINS -->
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h2 id="totalAdmins">
+
+1
+
+</h2>
+
+<p>Total Admins</p>
+
+</div>
+
+<!-- REVENUE -->
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-indian-rupee-sign"></i>
+
+<h2 id="totalRevenue">
+
+₹0
+
+</h2>
+
+<p>Total Revenue</p>
+
+</div>
+
+</div>
+
+<!-- OFFER BANNER -->
+
+<div class="upload-section"
+id="bannerSection">
+
+<h2>
+
+Upload Offer Banner
+
+</h2>
+
+<input
+type="text"
+id="bannerTitle"
+placeholder="Offer Title">
+
+<input
+type="file"
+id="bannerImage"
+accept="image/*">
+
+<button
+type="button"
+id="uploadBannerBtn">
+
+Upload Banner
+
+</button>
+
+</div>
+
+<!-- PRODUCT SECTION -->
+
+<div class="upload-section"
+id="productSection">
+
+<h2>Add Product</h2>
+
+<input
+type="text"
+id="productName"
+placeholder="Product Name">
+
+<input
+type="text"
+id="productPrice"
+placeholder="Product Price">
+
+<input
+type="text"
+id="discountPrice"
+placeholder="Discount Price">
+
+<input
+type="number"
+id="productStock"
+placeholder="Product Stock">
+
+<input
+type="text"
+id="productCategory"
+placeholder="Product Category">
+
+<textarea
+id="productDescription"
+placeholder="Product Description"></textarea>
+
+<input
+type="file"
+id="productImage"
+accept="image/*">
+
+<button
+type="button"
+id="uploadBtn">
+
+Upload Product
+
+</button>
+
+</div>
+
+<!-- PRODUCTS LIST -->
+
+<div class="product-list">
+
+<h2>Uploaded Products</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+<th>Price</th>
+<th>Discount</th>
+<th>Stock</th>
+<th>Category</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="productTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- ORDERS -->
+
+<div class="product-list"
+id="ordersSection">
+
+<h2>Customer Orders</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Customer</th>
+<th>Phone</th>
+<th>Total</th>
+<th>Products</th>
+<th>Payment</th>
+<th>Payment Proof</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ordersTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- REVIEWS -->
+
+<div class="product-list"
+id="reviewsSection">
+
+<h2>
+
+Customer Reviews
+
+</h2>
+
+<div id="reviewsContainer">
+
+</div>
+
+</div>
+
+<!-- ADMINS -->
+ 
+<div class="product-list"
+id="adminsSection">
+
+<h2>
+
+Admin Management
+
+</h2>
+
+<div class="upload-section">
+
+<input
+type="text"
+id="adminName"
+placeholder="Admin Name">
+
+<input
+type="text"
+id="adminUsername"
+placeholder="Username">
+
+<input
+type="password"
+id="adminPassword"
+placeholder="Password">
+
+<button
+type="button"
+id="createAdminBtn">
+
+Create Admin
+
+</button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+<th>Username</th>
+<th>Role</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="adminTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="owner-script.js"></script>
+
+<!-- CHART JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- SALES REPORT -->
+
+<section class="sales-report">
+
+<h1>
+
+Sales Analytics 📊
+
+</h1>
+
+<div class="analytics-cards">
+
+<div class="analytics-card">
+
+<h2 id="totalRevenueCard">
+
+₹0
+
+</h2>
+
+<p>
+
+Total Revenue
+
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h2 id="totalOrdersCard">
+
+0
+
+</h2>
+
+<p>
+
+Total Orders
+
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h2 id="pendingOrdersCard">
+
+0
+
+</h2>
+
+<p>
+
+Pending Orders
+
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h2 id="deliveredOrdersCard">
+
+0
+
+</h2>
+
+<p>
+
+Delivered Orders
+
+</p>
+
+</div>
+
+</div>
+
+<!-- CHART -->
+
+<div class="chart-container">
+
+<canvas id="salesChart"></canvas>
+
+</div>
+
+</section>
+
+</body>
+</html>

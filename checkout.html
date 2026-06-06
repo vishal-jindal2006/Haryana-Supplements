@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+
+<img src="assets/logos/logo.png">
+
+<h2>HARYANA SUPPLEMENTS</h2>
+
+</div>
+
+</header>
+
+<section class="checkout-page">
+
+<div class="checkout-container">
+
+<!-- LEFT SIDE -->
+
+<div class="checkout-form">
+
+<h1>Checkout</h1>
+
+<input
+type="text"
+id="customerName"
+placeholder="Full Name">
+
+<input
+type="number"
+id="customerPhone"
+placeholder="Phone Number">
+
+<textarea
+id="customerAddress"
+placeholder="Full Address"></textarea>
+
+<input
+type="text"
+id="customerPincode"
+placeholder="Pincode">
+
+<input
+type="text"
+id="customerCity"
+placeholder="City">
+
+<input
+type="text"
+id="customerState"
+placeholder="State">
+
+<select id="paymentMethod">
+
+<option value="COD">
+
+Cash On Delivery
+
+</option>
+
+<option value="UPI">
+
+UPI Payment
+
+</option>
+
+</select>
+
+<button id="placeOrderBtn">
+
+Place Order
+
+</button>
+
+<div id="paymentModal" class="payment-modal">
+
+    <div class="payment-box">
+
+        <h2>Complete Payment</h2>
+
+        <p>
+            UPI ID:
+            <b>7027768213@uboi</b>
+        </p>
+
+        <h3>
+            Amount:
+            ₹<span id="paymentAmount">0</span>
+        </h3>
+
+        <input
+        type="file"
+        id="paymentScreenshot"
+        accept="image/*">
+
+        <br><br>
+
+        <button id="submitPaymentBtn">
+
+            Proceed To WhatsApp
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="order-summary">
+
+<h1>Order Summary</h1>
+
+<div id="checkoutItems">
+
+</div>
+
+<hr style="margin:20px 0; border-color:#222;">
+
+<p>
+
+Subtotal:
+₹<span id="subtotalAmount">
+
+0
+
+</span>
+
+</p>
+
+<br>
+
+<p id="advanceFeeRow">
+
+COD Advance Fee (10%):
+₹<span id="advanceFee">
+
+0
+
+</span>
+
+</p>
+
+<br>
+
+<p id="remainingAmountRow">
+
+Remaining On Delivery:
+₹<span id="remainingAmount">
+
+0
+
+</span>
+
+</p>
+
+<br>
+
+<h2>
+
+Total:
+₹<span id="checkoutTotal">
+
+0
+
+</span>
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="checkout.js"></script>
+
+</body>
+
+</html>

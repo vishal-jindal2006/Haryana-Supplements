@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Owner Login</title>
+
+<link rel="stylesheet"
+href="../style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* LOGIN PAGE */
+
+body{
+
+    margin:0;
+
+    padding:0;
+
+    background:black;
+
+    font-family:Arial;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+}
+
+/* LOGIN BOX */
+
+.admin-login-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.admin-login-box{
+
+    width:400px;
+
+    background:#111;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 0 30px rgba(255,0,0,0.3);
+
+}
+
+/* TITLE */
+
+.admin-login-box h1{
+
+    color:red;
+
+    margin-bottom:10px;
+
+}
+
+.admin-login-box h2{
+
+    color:white;
+
+    margin-bottom:30px;
+
+}
+
+/* INPUTS */
+
+.admin-login-box input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#222;
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+/* BUTTON */
+
+.admin-login-box button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:red;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.admin-login-box button:hover{
+
+    background:white;
+
+    color:red;
+
+}
+
+/* ERROR */
+
+#loginError{
+
+    color:red;
+
+    margin-top:15px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="admin-login-container">
+
+<div class="admin-login-box">
+
+<h1>
+
+Haryana Supplements
+
+</h1>
+
+<h2>
+
+Owner Login 🔐
+
+</h2>
+
+<input
+type="text"
+id="adminUsername"
+placeholder="Enter Username">
+
+<input
+type="password"
+id="adminPassword"
+placeholder="Enter Password">
+
+<button id="adminLoginBtn">
+
+Login
+
+</button>
+
+<p id="loginError">
+
+</p>
+
+</div>
+
+</div>
+
+<script src="./admin-login.js"></script>
+
+</body>
+</html>

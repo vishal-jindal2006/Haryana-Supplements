@@ -1,0 +1,793 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    color: white;
+}
+
+/* Background */
+
+.background{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)),
+    url("../assets/banners/banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(3px);
+    transform: scale(1.1);
+}
+
+/* Center Container */
+
+.login-container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+}
+
+/* Login Box */
+
+.login-box{
+    width: 420px;
+
+    background: rgba(15,15,15,0.92);
+
+    backdrop-filter: blur(15px);
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255,0,0,0.25);
+
+    box-shadow: 0 0 35px rgba(255,0,0,0.25);
+
+    text-align: center;
+
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.login-box h1{
+    color: red;
+    font-size: 34px;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.login-box p{
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+
+.input-box{
+    width: 100%;
+    height: 60px;
+
+    background: #1b1b1b;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    transition: 0.3s;
+}
+
+.input-box:hover{
+    border-color: rgba(255,0,0,0.4);
+}
+
+.input-box i{
+    color: red;
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+.input-box input{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+}
+
+.input-box input::placeholder{
+    color: #888;
+}
+
+/* Button */
+
+#loginBtn{
+    width: 100%;
+    height: 55px;
+
+    border: none;
+
+    background: red;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    margin-top: 10px;
+}
+
+#loginBtn:hover{
+    background: darkred;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+}
+
+/* Demo */
+
+.demo{
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #888;
+}
+
+/* Responsive */
+
+@media(max-width: 500px){
+
+    .login-box{
+        width: 90%;
+        padding: 35px 25px;
+    }
+
+    .login-box h1{
+        font-size: 28px;
+    }
+
+}
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-sidebar{
+    position: fixed;
+
+    width: 260px;
+    height: 100vh;
+
+    background: #111;
+
+    padding: 30px 20px;
+
+    border-right: 1px solid rgba(255,0,0,0.2);
+}
+
+.dashboard-sidebar h2{
+    color: red;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.dashboard-sidebar ul{
+    list-style: none;
+}
+
+.dashboard-sidebar ul li{
+    padding: 18px;
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 17px;
+}
+
+.dashboard-sidebar ul li:hover{
+    background: red;
+}
+
+.dashboard-sidebar ul li i{
+    margin-right: 12px;
+}
+
+/* Main */
+
+.dashboard-main{
+    margin-left: 260px;
+    padding: 40px;
+}
+
+/* Topbar */
+
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+.topbar h1{
+    font-size: 35px;
+}
+
+.admin-info{
+    background: #1a1a1a;
+    padding: 12px 22px;
+    border-radius: 10px;
+}
+
+/* Cards */
+
+.dashboard-cards{
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap: 25px;
+
+    margin-bottom: 50px;
+}
+
+.dashboard-card{
+    background: #161616;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.dashboard-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(255,0,0,0.4);
+}
+
+.dashboard-card i{
+    font-size: 35px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.dashboard-card h2{
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+/* Upload Section */
+
+.upload-section{
+    background: #161616;
+
+    padding: 35px;
+
+    border-radius: 20px;
+}
+
+.upload-section h2{
+    margin-bottom: 25px;
+    color: red;
+}
+
+.upload-section input,
+.upload-section textarea{
+
+    width: 100%;
+
+    padding: 16px;
+
+    margin-bottom: 20px;
+
+    background: #222;
+
+    border: none;
+
+    outline: none;
+
+    color: white;
+
+    border-radius: 10px;
+}
+
+.upload-section textarea{
+    height: 140px;
+    resize: none;
+}
+
+.upload-section button{
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    background: red;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.upload-section button:hover{
+    background: darkred;
+}
+
+/* Responsive */
+
+@media(max-width: 900px){
+
+    .dashboard-sidebar{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .dashboard-main{
+        margin-left: 0;
+    }
+
+}
+/* =========================
+   PRODUCT TABLE
+========================= */
+
+.product-list{
+
+    margin-top: 50px;
+
+    background: #161616;
+
+    padding: 35px;
+
+    border-radius: 20px;
+}
+
+.product-list h2{
+    color: red;
+    margin-bottom: 25px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th{
+    background: red;
+    padding: 16px;
+    text-align: left;
+}
+
+table td{
+    padding: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+table tr:hover{
+    background: rgba(255,0,0,0.05);
+}
+
+.delete-btn{
+    padding: 10px 18px;
+
+    background: red;
+
+    border: none;
+
+    color: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+/* =========================
+OWNER DASHBOARD FIX
+========================= */
+
+body{
+
+    overflow-y: auto !important;
+
+}
+
+
+/* MAIN DASHBOARD */
+
+.dashboard-main{
+
+    margin-left: 300px;
+
+    padding: 40px;
+
+    min-height: 100vh;
+
+    overflow-y: auto;
+
+}
+
+
+/* SIDEBAR */
+
+.dashboard-sidebar{
+
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    width: 280px;
+
+    height: 100vh;
+
+    background: #050505;
+
+    border-right:
+    1px solid rgba(255,0,0,0.3);
+
+    z-index: 1000;
+
+    overflow-y: auto;
+
+}
+
+
+/* PRODUCT SECTION */
+
+.upload-section,
+.product-list{
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+/* INPUTS */
+
+.upload-section input,
+.upload-section textarea,
+.upload-section select{
+
+    width: 100%;
+
+    padding: 18px;
+
+    margin-bottom: 20px;
+
+    background: #181818;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+}
+
+
+/* BUTTON */
+
+#uploadBtn{
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: red;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+#uploadBtn:hover{
+
+    background: white;
+
+    color: red;
+
+}
+
+
+/* TABLE */
+
+.product-list table{
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+}
+
+.product-list th,
+.product-list td{
+
+    padding: 18px;
+
+    text-align: left;
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.1);
+
+}
+
+.product-list th{
+
+    color: red;
+
+}
+
+
+/* DELETE BUTTON */
+
+.delete-btn{
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: red;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+.delete-btn:hover{
+
+    background: white;
+
+    color: red;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .dashboard-sidebar{
+
+        width: 100%;
+
+        height: auto;
+
+        position: relative;
+
+    }
+
+    .dashboard-main{
+
+        margin-left: 0;
+
+        padding: 20px;
+
+    }
+
+}
+
+/* =========================
+   ANALYTICS CARDS
+========================= */
+
+.analytics-cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    margin-top:30px;
+
+    margin-bottom:40px;
+
+}
+
+.analytics-card{
+
+    background:#111;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    border:1px solid #222;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 0 15px rgba(255,0,0,0.08);
+
+}
+
+.analytics-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,0.25);
+
+}
+
+.analytics-card h2{
+
+    color:#ff1a1a;
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.analytics-card p{
+
+    color:white;
+
+    font-size:20px;
+
+    margin:0;
+
+}
+
+/* =========================
+   SALES REPORT
+========================= */
+
+.sales-report{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:30px;
+
+    box-sizing:border-box;
+
+}
+
+.sales-report h1{
+
+    color:white;
+
+    font-size:38px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* =========================
+   CHART CONTAINER
+========================= */
+
+.chart-container{
+
+    background:#111;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    min-height:500px;
+
+    border:1px solid #222;
+
+    box-shadow:
+    0 0 15px rgba(255,0,0,0.08);
+
+}
+
+.chart-container canvas{
+
+    width:100% !important;
+
+    height:450px !important;
+
+}
+
+/* PRODUCT TABLE HEADER */
+
+.product-list table thead th{
+
+    color: white !important;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    padding: 15px;
+
+    background: #ff0000;
+
+}
