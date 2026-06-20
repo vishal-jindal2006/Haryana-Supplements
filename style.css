@@ -3137,3 +3137,86 @@ margin-left:8px;
 
     padding:20px 0;
 }
+
+/* PRODUCTS PAGE */
+
+.products-title{
+    text-align:center;
+    font-size:48px;
+    font-weight:800;
+    margin:40px 0 25px;
+    color:#111;
+}
+
+.product-filters{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.product-filters button{
+    background:#ff1414;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.product-filters button:hover{
+    transform:translateY(-2px);
+}
+
+.all-products-page{
+    padding:20px;
+}
+
+.product-filters{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:25px 0 40px;
+}
+
+.product-filters button{
+    background:#ff1414;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.product-filters button:hover{
+    transform:translateY(-3px);
+    background:#d40000;
+}
+
+.top-strip{
+    background:#b30000;
+    color:white;
+    overflow:hidden;
+    white-space:nowrap;
+    padding:10px 0;
+    font-weight:700;
+}
+
+.top-strip-track{
+    display:inline-block;
+    animation: scrollStrip 25s linear infinite;
+}
+
+@keyframes scrollStrip{
+    from{
+        transform:translateX(100%);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}

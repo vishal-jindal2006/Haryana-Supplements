@@ -403,7 +403,7 @@ uploadBtn.addEventListener(
         productDescription.value,
 
         image:
-        data.secure_url
+        [data.secure_url]
 
     };
 
@@ -809,7 +809,7 @@ uploadBannerBtn.addEventListener(
 
                 title: bannerTitle.value,
 
-                image: data.secure_url
+                images: [data.secure_url]
 
             };
 

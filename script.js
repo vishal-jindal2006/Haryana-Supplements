@@ -299,8 +299,15 @@ async function loadProducts(){
             return;
         }
 
-        window.productsData = products;
-        products.forEach(product => {
+        const bestSellerProducts = products.filter(
+            product => product.bestSeller === true
+        );
+
+        window.productsData = bestSellerProducts;
+
+        bestSellerProducts.forEach(product => {
+            
+
             const discountPercent = Math.round(
             (
             (product.price - product.discount)
@@ -332,7 +339,7 @@ async function loadProducts(){
 
                 </span>
 
-                <img src="${product.image}">
+                <img src="${product.images?.[0] || 'assets/products/default.png'}">
 
                 <p class="brand-name">
 
