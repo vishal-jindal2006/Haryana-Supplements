@@ -44,6 +44,14 @@ const productSchema = new mongoose.Schema({
 
     },
 
+    bestSeller: {
+
+        type: Boolean,
+
+        default: false
+
+    },
+
     stock: {
 
         type: Number,

@@ -791,3 +791,23 @@ body{
     background: #ff0000;
 
 }
+
+.best-seller-box{
+
+    margin:15px 0;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#fff;
+}
+
+.best-seller-box input{
+
+    width:18px;
+
+    height:18px;
+
+    margin-right:8px;
+}

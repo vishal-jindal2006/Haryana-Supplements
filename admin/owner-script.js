@@ -377,30 +377,35 @@ uploadBtn.addEventListener(
 
     const newProduct = {
 
-    name: productName.value,
+        name: productName.value,
 
-    price: Number(
-        productPrice.value
-    ),
+        price: Number(
+            productPrice.value
+        ),
 
-    discount: Number(
-        discountPrice.value
-    ),
+        discount: Number(
+            discountPrice.value
+        ),
 
-    stock: Number(
-        productStock.value
-    ),
+        stock: Number(
+            productStock.value
+        ),
 
-    category:
-    productCategory.value,
+        category:
+        productCategory.value,
 
-    description:
-    productDescription.value,
+        bestSeller:
+        document.getElementById(
+            "bestSeller"
+        ).checked,
 
-    image:
-    data.secure_url
+        description:
+        productDescription.value,
 
-};
+        image:
+        data.secure_url
+
+    };
 
 console.log(newProduct);
 

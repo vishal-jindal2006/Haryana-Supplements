@@ -301,14 +301,58 @@ async function loadProducts(){
 
         window.productsData = products;
         products.forEach(product => {
+            const discountPercent = Math.round(
+            (
+            (product.price - product.discount)
+            /
+            product.price
+            ) * 100
+            );
+
+            const saveAmount =
+            product.price - product.discount;
 
             dynamicProducts.innerHTML += `
 
-            <div class="product-card">
+            <div
+            class="product-card"
+            onclick="showProductDetails('${product._id}')">
+
+            <div class="discount-badge">
+                ${discountPercent}% OFF
+            </div>
+
+            <div class="wishlist-icon">
+                ❤️
+            </div>
+
+                <span class="product-badge">
+
+                    🔥 BESTSELLER
+
+                </span>
 
                 <img src="${product.image}">
 
+                <p class="brand-name">
+
+                HARYANA SUPPLEMENTS
+
+                </p>
+
                 <h3>${product.name}</h3>
+
+                <div class="product-rating">
+
+                ⭐ 4.9
+
+                <span>
+
+                95 Verified Reviews
+
+                </span>
+
+                </div>
 
                 <div class="price">
 
@@ -322,21 +366,21 @@ async function loadProducts(){
 
                 </div>
 
+                <div class="save-price">
+
+                    SAVE ₹${saveAmount}
+
+                </div>
+
                 <button
-                onclick="addToCart(
+                onclick="event.stopPropagation();
+
+                addToCart(
                     '${product.name}',
                     ${product.discount}
                 )">
 
                     Add To Cart
-
-                </button>
-
-                <button
-                class="details-btn"
-                onclick="showProductDetails('${product._id}')">
-
-                Click For Product Details
 
                 </button>
 
@@ -790,23 +834,40 @@ async function loadReviews(){
 
         reviews.forEach(review => {
 
+            const firstLetter =
+            review.customerName.charAt(0).toUpperCase();
+
             container.innerHTML += `
 
             <div class="review-card">
 
-                <h3>
-                    ${review.customerName}
-                </h3>
-
-                <div>
-
+                <div class="review-stars">
                     ${"⭐".repeat(review.rating)}
-                    
                 </div>
 
-                <p>
-                    ${review.reviewText}
+                <p class="review-text">
+                    "${review.reviewText}"
                 </p>
+
+                <div class="review-user">
+
+                    <div class="review-avatar">
+                        ${firstLetter}
+                    </div>
+
+                    <div>
+
+                        <div class="review-name">
+                            ${review.customerName}
+                        </div>
+
+                        <div class="review-verified">
+                            ✅ VERIFIED CUSTOMER
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
