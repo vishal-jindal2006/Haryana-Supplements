@@ -20,6 +20,50 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
+<!-- TOP TICKER -->
+
+<div class="top-ticker">
+
+    <div class="ticker-content">
+
+        🔥 SPECIAL DISCOUNT ON BULK ORDERS
+
+        <span class="ticker-separator">●</span>
+
+        📞 ORDER NOW: 7027768213
+
+        <span class="ticker-separator">●</span>
+
+        ✅ 100% AUTHENTIC SUPPLEMENTS
+
+        <span class="ticker-separator">●</span>
+
+        🚚 FREE SHIPPING AVAILABLE
+
+        <span class="ticker-separator">●</span>
+
+        💪 HARYANA SUPPLEMENTS
+
+        <span class="ticker-separator">●</span>
+
+        🔥 SPECIAL DISCOUNT ON BULK ORDERS
+
+        <span class="ticker-separator">●</span>
+
+        📞 ORDER NOW: 7027768213
+
+        <span class="ticker-separator">●</span>
+
+        ✅ 100% AUTHENTIC SUPPLEMENTS
+
+        <span class="ticker-separator">●</span>
+
+        🚚 FREE SHIPPING AVAILABLE
+
+    </div>
+
+</div>
+
 <!-- Navbar -->
 
 <header class="navbar">
@@ -32,6 +76,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </div>
 
+<div class="nav-right">
+
+<a href="index.html" class="nav-btn">
+
+    <i class="fa-solid fa-house"></i>
+
+    Home
+
+</a>
+
+<a href="products.html" class="nav-btn">
+
+    <i class="fa-solid fa-box"></i>
+
+    Products
+
+</a>
+
+    <div class="cart-icon" id="cartBtn">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <span id="cartCount">0</span>
+
+    </div>
+
+</div>
+
 </header>
 
 <!-- Product Details -->
@@ -41,7 +113,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <div class="product-details-container">
 
     <div class="product-image">
-        <img id="detailsImage" src="">
+
+        <div class="main-image-box">
+
+            <img
+            id="detailsImage"
+            src="">
+
+        </div>
+
+        <div class="thumbnail-grid" id="thumbnailGrid">
+
+        </div>
+
     </div>
 
     <div class="product-info">
@@ -54,14 +138,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         <div class="price-box">
 
-            <div>
+            <div class="price-card">
+
                 <p>Discounted Price</p>
+
                 <h2 id="detailsDiscount"></h2>
+
             </div>
 
-            <div>
+            <div class="price-card">
+
                 <p>Original Price</p>
+
                 <h3 id="detailsPrice"></h3>
+
+            </div>
+
+            <div class="price-card">
+
+                <p>You Save</p>
+
+                <h2 id="saveAmount"></h2>
+
             </div>
 
         </div>
@@ -70,19 +168,99 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             🟢 In Stock
         </div>
 
+        <div class="quantity-box">
+
+            <button
+            onclick="decreaseQty()">
+                -
+            </button>
+
+            <span id="productQty">
+                1
+            </span>
+
+            <button
+            onclick="increaseQty()">
+                +
+            </button>
+
+        </div>
+
+        <div class="product-actions">
+
+            <button
+            id="addToCartBtn"
+            class="add-cart-btn">
+
+                Add To Cart
+
+            </button>
+
+            <button
+            id="buyNowBtn"
+            class="buy-now-btn">
+
+                Buy Now
+
+            </button>
+
+        </div>
+
         <h2>Description</h2>
 
         <p id="detailsDescription"></p>
-
-        <button id="buyNowBtn">
-            Buy Now
-        </button>
 
     </div>
 
 </div>
 
 </section>
+
+<section class="related-products">
+
+    <h2>🔥 You May Also Like</h2>
+
+    <div
+    id="relatedProducts"
+    class="products-container">
+
+    </div>
+
+</section>
+
+<!-- CART SIDEBAR -->
+
+<div class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <button id="closeCart">
+            ✕
+        </button>
+
+    </div>
+
+    <div id="cartItems">
+
+    </div>
+
+    <div class="cart-footer">
+
+        <h3>
+            Total: ₹<span id="cartTotal">0</span>
+        </h3>
+
+        <button onclick="window.location.href='checkout.html'">
+
+            Checkout
+
+        </button>
+
+    </div>
+
+</div>
 
 <script src="product.js"></script>
 

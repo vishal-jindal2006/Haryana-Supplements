@@ -326,29 +326,10 @@ uploadBtn.addEventListener(
 
         // IMAGE FILE
 
-        const file =
-        productImage.files[0];
+        const files =
+        productImage.files;
 
-        // FORM DATA
-
-        const formData =
-        new FormData();
-
-        formData.append(
-
-            "file",
-
-            file
-
-        );
-
-        formData.append(
-
-            "upload_preset",
-
-            "haryana_supplements"
-
-        );
+        let uploadedImages = [];
 
         // BUTTON LOADING
 
@@ -357,134 +338,117 @@ uploadBtn.addEventListener(
 
         // CLOUDINARY UPLOAD
 
-        fetch(
+        (async () => {
 
-        "https://api.cloudinary.com/v1_1/dwftsph1p/image/upload",
+            try {
 
-        {
+                for(let i = 0; i < files.length; i++){
 
-            method: "POST",
+                    const formData = new FormData();
 
-            body: formData
+                    formData.append(
+                        "file",
+                        files[i]
+                    );
 
-        }
+                    formData.append(
+                        "upload_preset",
+                        "haryana_supplements"
+                    );
 
-        )
+                    const upload = await fetch(
+                        "https://api.cloudinary.com/v1_1/dwftsph1p/image/upload",
+                        {
+                            method: "POST",
+                            body: formData
+                        }
+                    );
 
-        .then(res => res.json())
+                    const data = await upload.json();
 
-        .then(async data => {
+                    uploadedImages.push(
+                        data.secure_url
+                    );
 
-    const newProduct = {
+                }
 
-        name: productName.value,
+                const newProduct = {
 
-        price: Number(
-            productPrice.value
-        ),
+                    name: productName.value,
 
-        discount: Number(
-            discountPrice.value
-        ),
+                    price: Number(productPrice.value),
 
-        stock: Number(
-            productStock.value
-        ),
+                    discount: Number(discountPrice.value),
 
-        category:
-        productCategory.value,
+                    stock: Number(productStock.value),
 
-        bestSeller:
-        document.getElementById(
-            "bestSeller"
-        ).checked,
+                    category: productCategory.value,
 
-        description:
-        productDescription.value,
+                    bestSeller:
+                    document.getElementById(
+                        "bestSeller"
+                    ).checked,
 
-        image:
-        [data.secure_url]
+                    description:
+                    productDescription.value,
 
-    };
+                    images: uploadedImages
 
-console.log(newProduct);
+                };
 
-    // SAVE TO MONGODB
+                const response = await fetch(
 
-    const response =
-    await fetch(
+                    "https://haryana-supplements-api.onrender.com/api/products/add",
 
-        "https://haryana-supplements-api.onrender.com/api/products/add",
+                    {
+                        method: "POST",
 
-        {
+                        headers: {
+                            "Content-Type":
+                            "application/json"
+                        },
 
-            method: "POST",
+                        body: JSON.stringify(
+                            newProduct
+                        )
+                    }
 
-            headers: {
+                );
 
-                "Content-Type":
-                "application/json"
+                await response.json();
 
-            },
+                await loadProducts();
 
-            body: JSON.stringify(
+                productName.value = "";
+                productPrice.value = "";
+                discountPrice.value = "";
+                productStock.value = "";
+                productDescription.value = "";
+                productImage.value = "";
 
-                newProduct
+                uploadBtn.innerText =
+                "Upload Product";
 
-            )
+                alert(
+                    "Product Uploaded Successfully 🔥"
+                );
 
-        }
+            }
 
-    );
+            catch(error){
 
-    const result =
-    await response.json();
+                console.log(error);
 
-    console.log(result);
+                uploadBtn.innerText =
+                "Upload Product";
 
-    // RELOAD PRODUCTS
+                alert(
+                    "Upload Failed ❌"
+                );
 
-    await loadProducts();
+            }
 
-    loadAnalytics();
-
-    // RESET FORM
-
-    productName.value = "";
-
-    productPrice.value = "";
-
-    discountPrice.value = "";
-
-    productStock.value = "";
-
-    productCategory.value = "";
-
-    productDescription.value = "";
-
-    productImage.value = "";
-
-    uploadBtn.innerText =
-    "Upload Product";
-
-    alert(
-    "Product Uploaded Successfully 🔥"
-);
-
-})
-
-.catch(error => {
-
-    console.log(error);
-
-    uploadBtn.innerText =
-    "Upload Product";
-
-    alert(
-        "Upload Failed"
-    );
-
-});
+        })();
 
 }
 );

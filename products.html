@@ -17,7 +17,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
-<!-- TOP ANIMATION STRIP -->
+<!-- TOP STRIP -->
 
 <div class="top-strip">
 
@@ -65,31 +65,71 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <img src="assets/logos/logo.png" alt="Logo">
 
-<h2>HARYANA SUPPLEMENTS</h2>
+<h2>
+
+HARYANA SUPPLEMENTS
+
+</h2>
 
 </div>
 
 <ul id="navMenu">
 
 <li>
-<a href="index.html">Home</a>
+
+<a href="index.html">
+
+Home
+
+</a>
+
 </li>
 
 <li>
-<a href="products.html">Products</a>
+
+<a href="products.html">
+
+Products
+
+</a>
+
 </li>
 
 </ul>
 
+<div class="nav-right">
+
+<div class="cart-icon">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="cartCount">
+
+0
+
+</span>
+
+</div>
+
+<a
+href="admin/admin-login.html"
+class="admin-login-btn">
+
+Admin
+
+</a>
+
+</div>
+
 </header>
 
-<!-- ALL PRODUCTS -->
+<!-- PRODUCTS SECTION -->
 
 <section class="all-products-page">
 
 <h1 class="products-title">
 
-💪 OUR PRODUCTS 
+💪 OUR PRODUCTS
 
 </h1>
 
@@ -97,37 +137,113 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="product-filters">
 
-<button onclick="filterProducts('All')">
+<button
+class="category-btn active"
+onclick="filterProducts('All', this)">
+
 All
+
 </button>
 
-<button onclick="filterProducts('Whey Protein')">
+<button
+class="category-btn"
+onclick="filterProducts('Whey Protein', this)">
+
 Whey Protein
+
 </button>
 
-<button onclick="filterProducts('Creatine')">
+<button
+class="category-btn"
+onclick="filterProducts('Creatine', this)">
+
 Creatine
+
 </button>
 
-<button onclick="filterProducts('Mass Gainer')">
+<button
+class="category-btn"
+onclick="filterProducts('Mass Gainer', this)">
+
 Mass Gainer
+
 </button>
 
-<button onclick="filterProducts('Pre Workout')">
+<button
+class="category-btn"
+onclick="filterProducts('Pre Workout', this)">
+
 Pre Workout
+
 </button>
 
-<button onclick="filterProducts('Fat Burner')">
+<button
+class="category-btn"
+onclick="filterProducts('Fat Burner', this)">
+
 Fat Burner
+
 </button>
 
-<button onclick="filterProducts('Vitamins')">
+<button
+class="category-btn"
+onclick="filterProducts('Vitamins', this)">
+
 Vitamins
+
 </button>
 
 </div>
 
-<!-- PRODUCTS CONTAINER -->
+<!-- SEARCH + SORT -->
+
+<div class="products-toolbar">
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Search Supplements..."
+onkeyup="searchProducts()">
+
+<select
+id="sortProducts"
+onchange="sortProducts()">
+
+<option value="">
+
+Sort Products
+
+</option>
+
+<option value="low">
+
+Price: Low → High
+
+</option>
+
+<option value="high">
+
+Price: High → Low
+
+</option>
+
+<option value="newest">
+
+Newest First
+
+</option>
+
+</select>
+
+</div>
+
+<h3 id="productCount">
+
+Showing 0 Products
+
+</h3>
+
+<!-- PRODUCTS -->
 
 <div
 id="allProductsContainer"
@@ -136,6 +252,59 @@ class="products-container">
 </div>
 
 </section>
+
+<!-- CART SIDEBAR -->
+
+<div
+class="cart-sidebar"
+id="cartSidebar">
+
+<div class="cart-header">
+
+<h2>
+
+Your Cart
+
+</h2>
+
+<i
+class="fa-solid fa-xmark"
+id="closeCart">
+
+</i>
+
+</div>
+
+<div
+class="cart-items"
+id="cartItems">
+
+</div>
+
+<div class="cart-footer">
+
+<h3>
+
+Total:
+₹<span id="cartTotal">
+
+0
+
+</span>
+
+</h3>
+
+<button
+class="checkout-btn"
+onclick="window.location.href='checkout.html'">
+
+Checkout
+
+</button>
+
+</div>
+
+</div>
 
 <script src="products.js"></script>
 

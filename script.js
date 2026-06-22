@@ -815,6 +815,8 @@ async function addReview(){
     }
 
 }
+let visibleReviews = 5;
+
 
 async function loadReviews(){
 
@@ -839,7 +841,9 @@ async function loadReviews(){
 
         container.innerHTML = "";
 
-        reviews.forEach(review => {
+        reviews
+        .slice(0, visibleReviews)
+        .forEach(review => {
 
             const firstLetter =
             review.customerName.charAt(0).toUpperCase();
@@ -882,6 +886,28 @@ async function loadReviews(){
 
         });
 
+        
+
+    if(reviews.length > visibleReviews){
+
+        container.innerHTML += `
+
+        <div style="text-align:center; width:100%;">
+
+            <button
+            onclick="loadMoreReviews()"
+            class="load-more-btn">
+
+                Load More Reviews
+
+            </button>
+
+        </div>
+
+        `;
+
+    }
+
     }
 
     catch(error){
@@ -895,4 +921,13 @@ async function loadReviews(){
 
 }
 
+
+function loadMoreReviews(){
+
+            visibleReviews += 5;
+
+            loadReviews();
+
+        }
+        
 loadReviews();
