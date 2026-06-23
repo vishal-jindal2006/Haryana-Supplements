@@ -6805,3 +6805,24 @@ body{
 }
 
 }
+
+@media (max-width:768px){
+
+.hero-content h1{
+    font-size:42px !important;
+    line-height:1.1 !important;
+    margin-top:80px !important;
+    margin-bottom:15px !important;
+}
+
+.hero-content p{
+    font-size:16px !important;
+    line-height:1.5 !important;
+}
+
+.hero{
+    min-height:760px !important;
+    padding-top:40px !important;
+}
+
+}
