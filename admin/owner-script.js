@@ -773,7 +773,7 @@ uploadBannerBtn.addEventListener(
 
                 title: bannerTitle.value,
 
-                images: [data.secure_url]
+                image: data.secure_url
 
             };
 
@@ -1357,6 +1357,7 @@ if(
     ).style.display = "none";
 
 }
+let reviewsVisible = 3;
 
 async function loadReviews(){
 
@@ -1411,3 +1412,49 @@ async function loadReviews(){
     });
 
 }
+
+async function deleteReview(id){
+
+    if(!confirm("Delete This Review?")){
+        return;
+    }
+
+    try{
+
+        const response = await fetch(
+
+            `https://haryana-supplements-api.onrender.com/api/reviews/${id}`,
+
+            {
+                method: "DELETE"
+            }
+
+        );
+
+        if(response.ok){
+
+            alert("Review Deleted ✅");
+
+            loadReviews();
+
+        }
+
+        else{
+
+            alert("Delete Failed ❌");
+
+        }
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+        alert("Delete Failed ❌");
+
+    }
+
+}
+
+loadReviews();

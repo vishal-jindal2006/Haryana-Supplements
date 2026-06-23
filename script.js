@@ -815,7 +815,7 @@ async function addReview(){
     }
 
 }
-let visibleReviews = 5;
+let visibleReviews = 3;
 
 
 async function loadReviews(){
@@ -924,7 +924,7 @@ async function loadReviews(){
 
 function loadMoreReviews(){
 
-            visibleReviews += 5;
+            visibleReviews += 3;
 
             loadReviews();
 

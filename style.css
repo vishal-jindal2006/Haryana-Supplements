@@ -6118,3 +6118,229 @@ body,
     }
 
 }
+
+/* =====================================
+   FINAL MOBILE FIX - ADD AT LAST
+===================================== */
+
+@media screen and (max-width:768px){
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden !important;
+}
+
+/* GLOBAL */
+
+.navbar,
+.hero,
+.products,
+.reviews,
+.why-us,
+.about-brand,
+.checkout-page,
+.product-page,
+.footer{
+    padding-left:15px !important;
+    padding-right:15px !important;
+}
+
+/* NAVBAR */
+
+.navbar{
+    top:40px;
+    padding:10px 12px !important;
+}
+
+.logo{
+    gap:8px !important;
+}
+
+.logo img{
+    width:40px !important;
+}
+
+.logo h2{
+    font-size:14px !important;
+}
+
+/* HERO */
+
+.hero{
+    min-height:85vh !important;
+    height:auto !important;
+    text-align:center;
+    justify-content:center;
+}
+
+.hero-content{
+    padding-top:120px !important;
+}
+
+.hero-content h1{
+    font-size:52px !important;
+    line-height:1.1 !important;
+}
+
+.hero-content p{
+    font-size:18px !important;
+}
+
+.hero-stats{
+    justify-content:center !important;
+}
+
+/* TRUST STRIP */
+
+.trust-strip{
+    grid-template-columns:1fr 1fr !important;
+    padding:20px 15px !important;
+}
+
+.trust-strip div{
+    font-size:15px !important;
+    padding:15px 10px !important;
+}
+
+/* WHY CHOOSE */
+
+.why-grid{
+    grid-template-columns:1fr !important;
+}
+
+.why-card{
+    width:100% !important;
+}
+
+/* ABOUT */
+
+.about-brand{
+    flex-direction:column !important;
+    gap:30px !important;
+}
+
+.about-image,
+.about-content{
+    min-width:100% !important;
+}
+
+.about-content h2{
+    font-size:38px !important;
+}
+
+/* PRODUCTS */
+
+.products-container{
+    grid-template-columns:1fr !important;
+}
+
+.product-card{
+    width:100% !important;
+}
+
+.product-card img{
+    height:220px !important;
+}
+
+/* FILTER BUTTONS */
+
+.product-filters{
+    padding:20px 10px !important;
+}
+
+.product-filters button{
+    width:48% !important;
+}
+
+/* SEARCH */
+
+.products-toolbar{
+    flex-direction:column !important;
+}
+
+.products-toolbar input,
+.products-toolbar select{
+    width:100% !important;
+}
+
+/* REVIEWS */
+
+#reviewsContainer,
+.reviews-container{
+    grid-template-columns:1fr !important;
+}
+
+.review-card{
+    max-width:100% !important;
+}
+
+/* CHECKOUT */
+
+.checkout-container{
+    display:flex !important;
+    flex-direction:column !important;
+    padding:15px !important;
+}
+
+.checkout-form,
+.order-summary{
+    width:100% !important;
+    padding:20px !important;
+}
+
+.order-summary{
+    position:static !important;
+}
+
+.checkout-form h2,
+.order-summary h2{
+    font-size:30px !important;
+}
+
+.total{
+    font-size:40px !important;
+}
+
+/* PRODUCT DETAILS */
+
+.product-container,
+.product-details-container{
+    flex-direction:column !important;
+}
+
+.product-image,
+.product-info{
+    width:100% !important;
+    min-width:100% !important;
+}
+
+.product-info h1{
+    font-size:32px !important;
+}
+
+.product-actions{
+    flex-direction:column !important;
+}
+
+.add-cart-btn,
+.buy-now-btn{
+    width:100% !important;
+}
+
+/* CART */
+
+.cart-sidebar,
+#cartSidebar{
+    width:100% !important;
+}
+
+/* WHATSAPP */
+
+.whatsapp-btn{
+    width:60px !important;
+    height:60px !important;
+    font-size:30px !important;
+}
+
+}
