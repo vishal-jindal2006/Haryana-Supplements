@@ -281,6 +281,8 @@ async function loadProducts(){
 
         const products = await res.json();
 
+        window.allProducts = products;
+
         dynamicProducts.innerHTML = "";
 
         if(products.length === 0){
@@ -498,136 +500,103 @@ if(searchInput){
 
 function filterProducts(category){
 
-    let products = [];
-
     dynamicProducts.innerHTML = "";
 
-    // ALL PRODUCTS
+    let products = window.allProducts || [];
 
-    if(category === "All"){
+    if(category === "all"){
 
         loadProducts();
-
         return;
-
     }
 
-    // FILTER PRODUCTS
-
-    const filteredProducts =
-
-    products.filter(product =>
-
-        product.category
-        .toLowerCase()
-
-        ===
-
-        category.toLowerCase()
-
+    const filteredProducts = products.filter(product =>
+        product.category &&
+        product.category.toLowerCase() === category.toLowerCase()
     );
-
-    // NO PRODUCTS
 
     if(filteredProducts.length === 0){
 
         dynamicProducts.innerHTML = `
-
         <h2 style="
-
         color:white;
         text-align:center;
-        width:100%;
-        margin-top:50px;
-
+        margin-top:40px;
         ">
-
-            No Products Found
-
+        No Products Found
         </h2>
-
         `;
 
         return;
-
     }
-
-    // DISPLAY PRODUCTS
 
     filteredProducts.forEach(product => {
 
+        const discountPercent = Math.round(
+            ((product.price - product.discount) /
+            product.price) * 100
+        );
+
+        const saveAmount =
+        product.price - product.discount;
+
         dynamicProducts.innerHTML += `
 
-        <div class="product-card"
+        <div
+        class="product-card"
+        onclick="showProductDetails('${product._id}')">
 
-        onclick='openProduct(
+            <div class="discount-badge">
+                ${discountPercent}% OFF
+            </div>
 
-        ${JSON.stringify(product)}
+            <div class="wishlist-icon">
+                ❤️
+            </div>
 
-        )'>
+            <span class="product-badge">
+                🔥 BESTSELLER
+            </span>
 
-            <img
-            src="${product.image}">
+            <img src="${product.images?.[0] || 'assets/products/default.png'}">
+
+            <p class="brand-name">
+                HARYANA SUPPLEMENTS
+            </p>
 
             <h3>${product.name}</h3>
 
+            <div class="product-rating">
+                ⭐ 4.9
+                <span>95 Verified Reviews</span>
+            </div>
+
             <div class="price">
-
                 <span class="new-price">
-
                     ₹${product.discount}
-
                 </span>
 
                 <span class="old-price">
-
                     ₹${product.price}
-
                 </span>
-
             </div>
 
-            ${
-            product.stock > 0
+            <div class="save-price">
+                SAVE ₹${saveAmount}
+            </div>
 
-            ?
-
-            `<button
+            <button
             onclick="event.stopPropagation();
-
             addToCart(
-
             '${product.name}',
-
             ${product.discount}
-
             )">
-
             Add To Cart
-
-            </button>`
-
-            :
-
-            `<button
-            style="
-
-            background:#444;
-            cursor:not-allowed;
-
-            ">
-
-            Out Of Stock
-
-            </button>`
-            }
+            </button>
 
         </div>
-
         `;
-
     });
-
 }
 
 function showProductDetails(productId){

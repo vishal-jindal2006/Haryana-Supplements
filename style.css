@@ -113,11 +113,11 @@ NAVBAR
 }
 
 .logo h2{
+    color: #ffffff !important;
+}
 
-    font-size: 26px;
-
-    color: red;
-
+.logo h2 span{
+    color: #c99700 !important;
 }
 
 
@@ -6165,6 +6165,22 @@ body{
     font-size:14px !important;
 }
 
+.logo h2{
+    color: #ffffff;
+}
+
+.logo h2 span{
+    color: #c99700; /* dark gold/yellow */
+}
+
+.logo h2{
+    color: #ffffff !important;
+}
+
+.logo h2 span{
+    color: #c99700 !important;
+}
+
 /* HERO */
 
 .hero{
@@ -6826,3 +6842,308 @@ body{
 }
 
 }
+
+@media (max-width:768px){
+
+.hero-content{
+    padding-top:140px !important;
+}
+
+.hero-content h1{
+    font-size:44px !important;
+    line-height:1.1 !important;
+    margin-top:0 !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero-content h1{
+    font-size:36px !important;
+    line-height:1.1 !important;
+    font-weight:800 !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero-content{
+    padding-top:110px !important;
+}
+
+.hero-content h1{
+    font-size:38px !important;
+    line-height:1.1 !important;
+}
+
+.hero{
+    min-height:620px !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero-content{
+    padding-top:70px !important;
+}
+
+.hero-content h1{
+    font-size:38px !important;
+    line-height:1.1 !important;
+}
+
+.hero{
+    min-height:600px !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero-content{
+    padding-top:120px !important;
+}
+
+.hero-content h1{
+    font-size:36px !important;
+    line-height:1.1 !important;
+    margin-bottom:15px !important;
+}
+
+.hero-content p{
+    font-size:15px !important;
+}
+
+.hero{
+    min-height:650px !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero-content{
+    padding-top:145px !important;
+}
+
+.hero-content h1{
+    font-size:36px !important;
+    line-height:1.1 !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero-content{
+    padding-top:165px !important;
+}
+
+.hero-content h1{
+    font-size:36px !important;
+    line-height:1.1 !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.products h2{
+    padding-top:60px !important;
+    margin-top:0 !important;
+    font-size:42px !important;
+    line-height:1.2 !important;
+}
+
+}
+
+@media (max-width:768px){
+
+.category-filter{
+    display:grid !important;
+    grid-template-columns:repeat(3,1fr) !important;
+    gap:10px !important;
+    padding:20px !important;
+}
+
+.category-btn{
+    width:100% !important;
+    min-width:auto !important;
+    padding:12px 5px !important;
+    font-size:13px !important;
+    text-align:center !important;
+}
+
+/* ALL button center me */
+
+.category-btn:first-child{
+    grid-column:1/4 !important;
+    max-width:160px !important;
+    margin:0 auto 10px auto !important;
+}
+
+}
+
+@media (max-width:768px){
+
+/* Products section */
+.products-section,
+.products,
+#products{
+    padding-top:70px !important;
+    overflow:visible !important;
+}
+
+/* Heading */
+.products-section h2,
+.products h2,
+#products h2{
+    margin-top:40px !important;
+    padding-top:20px !important;
+    line-height:1.2 !important;
+    overflow:visible !important;
+}
+
+/* Agar emoji use ki hai */
+.products-section h2 span,
+.products h2 span,
+#products h2 span{
+    display:inline-block !important;
+    margin-top:10px !important;
+}
+
+}
+
+.category-filter{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+}
+
+#categoryFilter{
+    width:90%;
+    max-width:400px;
+    padding:16px;
+    border:none;
+    border-radius:15px;
+    background:#fff;
+    color:#111;
+    font-size:16px;
+    font-weight:600;
+    outline:none;
+    cursor:pointer;
+}
+
+/* CATEGORY DROPDOWN */
+
+.category-filter{
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+}
+
+#categoryFilter{
+    width:100%;
+    max-width:350px;
+    padding:14px 18px;
+    border:none;
+    border-radius:12px;
+    background:#111;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    outline:none;
+    border:2px solid #ff2b2b;
+}
+
+#categoryFilter:hover{
+    border-color:#ff4444;
+}
+
+#categoryFilter option{
+    background:#111;
+    color:#fff;
+}
+
+@media(max-width:768px){
+
+    #categoryFilter{
+        max-width:100%;
+        font-size:15px;
+    }
+
+}
+
+/* OUR PRODUCTS FIX */
+
+.products-title{
+    padding-top: 50px !important;
+    margin-top: 0 !important;
+    line-height: 1.3 !important;
+}
+
+@media (max-width: 768px){
+
+    .products-title{
+        padding-top: 90px !important;
+        font-size: 3rem !important;
+        line-height: 1.2 !important;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .nav-right{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+    }
+
+    .menu-toggle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-size: 34px;
+        cursor: pointer;
+        order: 1;
+    }
+
+    .admin-login-btn{
+        order: 2;
+        margin: 0 auto;
+    }
+
+    .cart-icon{
+        order: 3;
+    }
+}
+
+.loader h1{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.1;
+}
+
+.loader-haryana{
+    color:#ffffff !important;
+}
+
+.loader-supplements{
+    color: #c99700 !important;
+    text-shadow: 0 0 10px rgba(201,151,0,0.3);
+}
+
