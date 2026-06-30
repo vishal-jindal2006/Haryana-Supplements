@@ -370,6 +370,8 @@ if(closeCart){
 
 function renderCart(){
 
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
     if(!cartItems) return;
 
     cartItems.innerHTML = "";
